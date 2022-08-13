@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\TestController;
+use App\Http\Controllers\ResultsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +30,8 @@ Route::middleware(['AuthenticationMiddleware'])->group(function(){
     });
 
 
+    
+
 Route::get('start_test', [AuthController::class, 'start_test'])->name('start_test');
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
@@ -35,3 +39,6 @@ Route::get('registration', [AuthController::class, 'registration'])->name('regis
 Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+
+Route::get('show_all', [ResultsController::class, 'index'])->name('show_all');

@@ -74,6 +74,7 @@
                     @auth
                         <a href="{{ url('/') }}">Home</a>
                     @else
+                    <a href="{{ route('show_all') }}">Results</a>
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
